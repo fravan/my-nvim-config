@@ -1,6 +1,6 @@
 -- Key mappings
-vim.g.mapleader = " "                              -- Set leader key to space
-vim.g.maplocalleader = " "                         -- Set local leader key (NEW)
+vim.g.mapleader = " " -- Set leader key to space
+vim.g.maplocalleader = " " -- Set local leader key (NEW)
 
 -- Normal mode mappings
 vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { desc = "Clear search highlights" })
@@ -20,13 +20,13 @@ vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer: Previous" })
 vim.keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Buffer: Close current" })
 vim.keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "Buffer: Close current" })
 vim.keymap.set("n", "<leader>bs", function()
-  local bufs = vim.api.nvim_list_bufs()
-  local current_buf = vim.api.nvim_get_current_buf()
-  for _, i in ipairs(bufs) do
-    if i ~= current_buf then
-      vim.api.nvim_buf_delete(i, {})
-    end
-  end
+	local bufs = vim.api.nvim_list_bufs()
+	local current_buf = vim.api.nvim_get_current_buf()
+	for _, i in ipairs(bufs) do
+		if i ~= current_buf then
+			vim.api.nvim_buf_delete(i, {})
+		end
+	end
 end, { desc = "Buffer: Keep current buffer only (single)" })
 
 -- Better window navigation
