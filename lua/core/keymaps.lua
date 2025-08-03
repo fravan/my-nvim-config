@@ -17,17 +17,6 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yankin
 -- Buffer navigation
 vim.keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Buffer: Next" })
 vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer: Previous" })
-vim.keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Buffer: Close current" })
-vim.keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "Buffer: Close current" })
-vim.keymap.set("n", "<leader>bs", function()
-	local bufs = vim.api.nvim_list_bufs()
-	local current_buf = vim.api.nvim_get_current_buf()
-	for _, i in ipairs(bufs) do
-		if i ~= current_buf then
-			vim.api.nvim_buf_delete(i, {})
-		end
-	end
-end, { desc = "Buffer: Keep current buffer only (single)" })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-Left>", "<C-w><Left>", { desc = "Move to left window" })
@@ -52,10 +41,6 @@ vim.keymap.set("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" }
 -- Better indenting in visual mode
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
-
--- Quick file navigation
--- vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Open file explorer" })
-vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" })
 
 -- Better J behavior
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position" })
