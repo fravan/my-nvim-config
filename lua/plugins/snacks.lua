@@ -44,6 +44,11 @@ return {
 					},
 				},
 			},
+			sources = {
+				explorer = {
+					hidden = true,
+				},
+			},
 		},
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
