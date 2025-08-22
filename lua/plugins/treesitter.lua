@@ -22,6 +22,7 @@ return {
 				"markdown",
 				"markdown_inline",
 				"python",
+				"sql",
 				"templ",
 				"typescript",
 				"vim",

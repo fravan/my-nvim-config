@@ -16,6 +16,7 @@ return {
 				python = { "ruff_fix", "ruff_format" },
 				javascript = { "prettier" },
 				javascriptreact = { "prettier" },
+				sql = { "sqlfluff" },
 				templ = { "templ" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
