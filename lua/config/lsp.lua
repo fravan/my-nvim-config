@@ -1,15 +1,15 @@
--- This is automatically done by mason-lspconfig.lua
--- vim.lsp.enable({
--- 	"lua_ls",
--- 	"gopls",
--- 	"html",
--- 	"jsonls",
--- 	"pyright",
--- 	"tailwindcss",
--- 	"templ",
--- 	"vtsls",
--- 	"yamlls",
--- })
+vim.lsp.enable({
+  "gleam",
+  "gopls",
+  "html",
+  "jsonls",
+  "lua_ls",
+  "pyright",
+  "tailwindcss",
+  "templ",
+  "vtsls",
+  "yamlls",
+})
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("my.lsp", {}),

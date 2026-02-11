@@ -1,5 +1,5 @@
 -- Key mappings
-vim.g.mapleader = " " -- Set leader key to space
+vim.g.mapleader = " "      -- Set leader key to space
 vim.g.maplocalleader = " " -- Set local leader key (NEW)
 
 -- Normal mode mappings
@@ -29,8 +29,8 @@ vim.keymap.set("n", "<leader>sv", ":vsplit<CR>", { desc = "Split window vertical
 vim.keymap.set("n", "<leader>sh", ":split<CR>", { desc = "Split window horizontally" })
 -- vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { desc = "Increase window height" })
 -- vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { desc = "Decrease window height" })
--- vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
--- vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
+vim.keymap.set("n", "<A-Left>", ":vertical resize -2<CR>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<A-Right>", ":vertical resize +2<CR>", { desc = "Increase window width" })
 
 -- Move lines up/down
 vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = "Move line down" })
@@ -54,7 +54,7 @@ vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Ed
 
 -- Copy Full File-Path
 vim.keymap.set("n", "<leader>pa", function()
-	local path = vim.fn.expand("%:p")
-	vim.fn.setreg("+", path)
-	print("file:", path)
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  print("file:", path)
 end, { desc = "Copy Full File-Path" })
