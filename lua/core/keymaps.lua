@@ -13,10 +13,11 @@ vim.keymap.set("n", "<PageUp>", "<C-u>zz", { desc = "Half page up (centered)" })
 
 -- Delete without yanking
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
+vim.keymap.set({ "n", "v" }, "p", "P", { desc = "Paste without yanking" })
 
--- Buffer navigation
-vim.keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Buffer: Next" })
-vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer: Previous" })
+-- Buffer navigation (deprecated, use harpoon instead)
+-- vim.keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Buffer: Next" })
+-- vim.keymap.set("n", "<S-TAB>", ":bprevious<CR>", { desc = "Buffer: Previous" })
 
 -- Better window navigation
 vim.keymap.set("n", "<C-Left>", "<C-w><Left>", { desc = "Move to left window" })

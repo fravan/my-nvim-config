@@ -53,7 +53,7 @@ return {
 		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scope = { enabled = true },
-		scroll = { enabled = true },
+		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 	},
@@ -139,18 +139,25 @@ return {
 			desc = "Git Branches",
 		},
 		{
+			"<leader>gb",
+			function()
+				Snacks.git.git_blame()
+			end,
+			desc = "Git blame",
+		},
+		{
 			"<leader>gl",
 			function()
-				Snacks.picker.git_log()
+				Snacks.picker.git_log_line()
 			end,
-			desc = "Git Log",
+			desc = "Git Log line",
 		},
 		{
 			"<leader>gL",
 			function()
-				Snacks.picker.git_log_line()
+				Snacks.picker.git_log()
 			end,
-			desc = "Git Log Line",
+			desc = "Git Log",
 		},
 		{
 			"<leader>gs",
@@ -295,20 +302,6 @@ return {
 			desc = "Dismiss All Notifications",
 		},
 		{
-			"<c-/>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "Toggle Terminal",
-		},
-		{
-			"<c-_>",
-			function()
-				Snacks.terminal()
-			end,
-			desc = "which_key_ignore",
-		},
-		{
 			"]]",
 			function()
 				Snacks.words.jump(vim.v.count1)
@@ -323,6 +316,71 @@ return {
 			end,
 			desc = "Prev Reference",
 			mode = { "n", "t" },
+		},
+		-- lsp
+		{
+			"gd",
+			function()
+				Snacks.picker.lsp_definitions()
+			end,
+			desc = "Goto Definition",
+		},
+		{
+			"gD",
+			function()
+				Snacks.picker.lsp_declarations()
+			end,
+			desc = "Goto Declaration",
+		},
+		{
+			"gr",
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			nowait = true,
+			desc = "References",
+		},
+		{
+			"gI",
+			function()
+				Snacks.picker.lsp_implementations()
+			end,
+			desc = "Goto Implementation",
+		},
+		{
+			"gy",
+			function()
+				Snacks.picker.lsp_type_definitions()
+			end,
+			desc = "Goto T[y]pe Definition",
+		},
+		{
+			"gai",
+			function()
+				Snacks.picker.lsp_incoming_calls()
+			end,
+			desc = "C[a]lls Incoming",
+		},
+		{
+			"gao",
+			function()
+				Snacks.picker.lsp_outgoing_calls()
+			end,
+			desc = "C[a]lls Outgoing",
+		},
+		{
+			"<leader>ss",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP Symbols",
+		},
+		{
+			"<leader>sS",
+			function()
+				Snacks.picker.lsp_workspace_symbols()
+			end,
+			desc = "LSP Workspace Symbols",
 		},
 	},
 }
