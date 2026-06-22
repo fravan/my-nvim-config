@@ -25,10 +25,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		key("gca", vim.lsp.buf.code_action, "Show code action")
 		key("<C-h>", vim.lsp.buf.signature_help, "Signature help", "i")
 		key("<leader>vd", vim.diagnostic.open_float, "Open floating diagnostic")
-		key("[d", function()
+		key("]d", function()
 			vim.diagnostic.jump({ count = 1 })
 		end, "Next diagnostic")
-		key("]d", function()
+		key("[d", function()
 			vim.diagnostic.jump({ count = -1 })
 		end, "Previous diagnostic")
 	end,
