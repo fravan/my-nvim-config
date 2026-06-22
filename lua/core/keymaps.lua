@@ -1,5 +1,5 @@
 -- Key mappings
-vim.g.mapleader = " "      -- Set leader key to space
+vim.g.mapleader = " " -- Set leader key to space
 vim.g.maplocalleader = " " -- Set local leader key (NEW)
 
 -- Normal mode mappings
@@ -13,7 +13,7 @@ vim.keymap.set("n", "<PageUp>", "<C-u>zz", { desc = "Half page up (centered)" })
 
 -- Delete without yanking
 vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
-vim.keymap.set({ "n", "v" }, "p", "P", { desc = "Paste without yanking" })
+vim.keymap.set("v", "p", '"_dP', { desc = "Paste without yanking" })
 
 -- Buffer navigation (deprecated, use harpoon instead)
 -- vim.keymap.set("n", "<TAB>", ":bnext<CR>", { desc = "Buffer: Next" })
@@ -55,7 +55,7 @@ vim.keymap.set("n", "<leader>rc", ":e ~/.config/nvim/init.lua<CR>", { desc = "Ed
 
 -- Copy Full File-Path
 vim.keymap.set("n", "<leader>pa", function()
-  local path = vim.fn.expand("%:p")
-  vim.fn.setreg("+", path)
-  print("file:", path)
+	local path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", path)
+	print("file:", path)
 end, { desc = "Copy Full File-Path" })
